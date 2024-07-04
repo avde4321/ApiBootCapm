@@ -129,3 +129,4 @@ C:\Users\avde4\OneDrive\Escritorio\tropicalFruitXport\PruebTec\EjemploEntity\Eje
 C:\Users\avde4\OneDrive\Escritorio\tropicalFruitXport\PruebTec\EjemploEntity\EjemploEntity\obj\Debug\net8.0\EjemploEntity.pdb
 C:\Users\avde4\OneDrive\Escritorio\tropicalFruitXport\PruebTec\EjemploEntity\EjemploEntity\obj\Debug\net8.0\EjemploEntity.genruntimeconfig.cache
 C:\Users\avde4\OneDrive\Escritorio\tropicalFruitXport\PruebTec\EjemploEntity\EjemploEntity\obj\Debug\net8.0\ref\EjemploEntity.dll
+C:\Users\avde4\OneDrive\Escritorio\tropicalFruitXport\PruebTec\EjemploEntity\EjemploEntity\obj\Debug\net8.0\EjemploEntity.sourcelink.json
