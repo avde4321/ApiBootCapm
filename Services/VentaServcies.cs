@@ -18,7 +18,7 @@ namespace EjemploEntity.Services
             this._context = context;
         }
 
-        public async Task<Respuesta> GetVenta(string? numFactura)
+        public async Task<Respuesta> GetVenta(string? numFactura, string fechaDesde, string fechaHasta)
         {
             var respuesta = new Respuesta();
             try
@@ -51,6 +51,14 @@ namespace EjemploEntity.Services
                 {
                     respuesta.Cod = "000";
                     respuesta.Data = await query.Where(x => x.NumFact.Equals(numFactura) && x.Estado.Equals("Registrada")).ToListAsync();
+                    respuesta.Mensaje = "OK";
+                }
+                else if ((fechaHasta != "0" & fechaDesde != "0") && (fechaHasta != null & fechaDesde != null))
+                {
+                    DateTime fechaDesdeCon = Convert.ToDateTime(fechaDesde);
+                    DateTime fechaHastaCon = Convert.ToDateTime(fechaHasta);
+                    respuesta.Cod = "000";
+                    respuesta.Data = await query.Where(x => x.Estado.Equals("Registrada") && (x.FechaHora >= fechaDesdeCon && x.FechaHora <= fechaHastaCon)).ToListAsync();
                     respuesta.Mensaje = "OK";
                 }
                 else
