@@ -115,6 +115,7 @@ C:\Users\avde4\OneDrive\Escritorio\tropicalFruitXport\PruebTec\EjemploEntity\Eje
 C:\Users\avde4\OneDrive\Escritorio\tropicalFruitXport\PruebTec\EjemploEntity\EjemploEntity\obj\Debug\net8.0\EjemploEntity.AssemblyInfo.cs
 C:\Users\avde4\OneDrive\Escritorio\tropicalFruitXport\PruebTec\EjemploEntity\EjemploEntity\obj\Debug\net8.0\EjemploEntity.csproj.CoreCompileInputs.cache
 C:\Users\avde4\OneDrive\Escritorio\tropicalFruitXport\PruebTec\EjemploEntity\EjemploEntity\obj\Debug\net8.0\EjemploEntity.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\avde4\OneDrive\Escritorio\tropicalFruitXport\PruebTec\EjemploEntity\EjemploEntity\obj\Debug\net8.0\EjemploEntity.sourcelink.json
 C:\Users\avde4\OneDrive\Escritorio\tropicalFruitXport\PruebTec\EjemploEntity\EjemploEntity\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\avde4\OneDrive\Escritorio\tropicalFruitXport\PruebTec\EjemploEntity\EjemploEntity\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\avde4\OneDrive\Escritorio\tropicalFruitXport\PruebTec\EjemploEntity\EjemploEntity\obj\Debug\net8.0\staticwebassets\msbuild.EjemploEntity.Microsoft.AspNetCore.StaticWebAssets.props
@@ -129,4 +130,3 @@ C:\Users\avde4\OneDrive\Escritorio\tropicalFruitXport\PruebTec\EjemploEntity\Eje
 C:\Users\avde4\OneDrive\Escritorio\tropicalFruitXport\PruebTec\EjemploEntity\EjemploEntity\obj\Debug\net8.0\EjemploEntity.pdb
 C:\Users\avde4\OneDrive\Escritorio\tropicalFruitXport\PruebTec\EjemploEntity\EjemploEntity\obj\Debug\net8.0\EjemploEntity.genruntimeconfig.cache
 C:\Users\avde4\OneDrive\Escritorio\tropicalFruitXport\PruebTec\EjemploEntity\EjemploEntity\obj\Debug\net8.0\ref\EjemploEntity.dll
-C:\Users\avde4\OneDrive\Escritorio\tropicalFruitXport\PruebTec\EjemploEntity\EjemploEntity\obj\Debug\net8.0\EjemploEntity.sourcelink.json

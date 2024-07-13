@@ -1,13 +1,17 @@
 ﻿using EjemploEntity.DTOs;
 using EjemploEntity.Interfaces;
 using EjemploEntity.Models;
+using EjemploEntity.Utilitrios;
 using Microsoft.EntityFrameworkCore;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace EjemploEntity.Services
 {
     public class VentaServcies : IVenta
     {
         private readonly MasterclassContext _context;
+        private ControlError Log = new ControlError();
+
 
         public VentaServcies(MasterclassContext context)
         {
@@ -52,11 +56,38 @@ namespace EjemploEntity.Services
                 else
                 {
                     respuesta.Cod = "000";
-                    respuesta.Data = await query.Where(x => x.Estado.Equals("Registrada")).ToListAsync(); ;
+                    respuesta.Data = await query.Where(x => x.Estado.Equals("Registrada")).ToListAsync();
                     respuesta.Mensaje = "OK";
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
+            {
+                respuesta.Cod = "999";
+                respuesta.Mensaje = $"Se presento una novedad, comunicarse con el departamentos de sistemas";
+                Log.LogErrorMetodos("VentaServcies", "GetVenta", ex.Message);
+            }
+            return respuesta;
+        }
+
+        public async Task<Respuesta> GetVentaReporte()
+        {
+            var respuesta = new Respuesta();
+            try
+            {
+                respuesta.Cod = "000";
+
+                respuesta.Data = await _context.Ventas
+                    .Where(v => v.Precio > 100)
+                    .GroupBy(v => v.Precio)
+                    .Select(g => new
+                    {
+                        CantidadRegistro = g.Count(),
+                        ValorConsultado = g.Key
+                    }).ToListAsync();
+
+                respuesta.Mensaje = "OK";
+            }
+            catch (Exception ex)
             {
 
                 throw;
@@ -84,6 +115,22 @@ namespace EjemploEntity.Services
             {
                 respuesta.Cod = "999";
                 respuesta.Mensaje = $"Se generado una novedad, Error: {ex.Message}";
+            }
+            return respuesta;
+        }
+
+        public async Task<Respuesta> PutVenta(Venta venta)
+        {
+            var respuesta = new Respuesta();
+            try
+            {
+                _context.Ventas.Update(venta);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
             }
             return respuesta;
         }

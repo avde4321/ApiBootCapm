@@ -1,5 +1,6 @@
 ﻿using EjemploEntity.Interfaces;
 using EjemploEntity.Models;
+using EjemploEntity.Utilitrios;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EjemploEntity.Controllers
@@ -9,6 +10,7 @@ namespace EjemploEntity.Controllers
     public class VentaController : Controller
     {
         private readonly IVenta _venta;
+        private ControlError Log = new ControlError();
 
         public VentaController(IVenta venta) 
         {
@@ -23,6 +25,22 @@ namespace EjemploEntity.Controllers
             try
             {
                 respuesta = await _venta.GetVenta(numFactura);
+            }
+            catch (Exception ex)
+            {
+                Log.LogErrorMetodos("VentaController", "GetVenta", ex.Message);
+            }
+            return respuesta;
+        }
+
+        [HttpGet]
+        [Route("GetVentaReporte")]
+        public async Task<Respuesta> GetVentaReporte()
+        {
+            var respuesta = new Respuesta();
+            try
+            {
+                respuesta = await _venta.GetVentaReporte();
             }
             catch (Exception)
             {
@@ -48,5 +66,24 @@ namespace EjemploEntity.Controllers
             }
             return respuesta;
         }
+
+        [HttpPut]
+        [Route("PutVenta")]
+        public async Task<Respuesta> PutVenta([FromBody] Venta venta)
+        {
+            var respuesta = new Respuesta();
+            try
+            {
+                respuesta = await _venta.PutVenta(venta);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return respuesta;
+        }
+
+
     }
 }
